@@ -1,0 +1,25 @@
+{
+    "arduino.path": "/home/rik/arduino-1.8.10/",
+    "vim.debug.silent": true,
+    "editor.snippetSuggestions": "none",
+    "editor.suggest.showSnippets": false,
+    "C_Cpp.suggestSnippets": false,
+    "cmake.configureOnOpen": true,
+    "editor.tabSize": 8,
+    "editor.parameterHints.enabled": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "python.showStartPage": false,
+    "jupyter.sendSelectionToInteractiveWindow": false,
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
+    "editor.minimap.enabled": false,
+    "workbench.sideBar.location": "right",
+    "terminal.integrated.fontFamily": "MonoSpace",
+    "terminal.integrated.fontSize": 13,
+    "editor.cursorStyle": "line",
+    "editor.insertSpaces": false,
+    "editor.lineNumbers": "on",
+    "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
+    "editor.wordWrap": "off"
+}
