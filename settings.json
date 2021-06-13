@@ -5,7 +5,7 @@
     "editor.suggest.showSnippets": false,
     "C_Cpp.suggestSnippets": false,
     "cmake.configureOnOpen": true,
-    "editor.tabSize": 8,
+    "editor.tabSize": 2,
     "editor.parameterHints.enabled": false,
     "workbench.startupEditor": "newUntitledFile",
     "python.showStartPage": false,
@@ -18,7 +18,6 @@
     "terminal.integrated.fontFamily": "MonoSpace",
     "terminal.integrated.fontSize": 13,
     "editor.cursorStyle": "line",
-    "editor.insertSpaces": false,
     "editor.lineNumbers": "on",
     "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
     "editor.wordWrap": "off"
