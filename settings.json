@@ -18,7 +18,10 @@
     "terminal.integrated.fontFamily": "MonoSpace",
     "terminal.integrated.fontSize": 13,
     "editor.cursorStyle": "line",
+    "editor.insertSpaces": false,
     "editor.lineNumbers": "on",
     "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
-    "editor.wordWrap": "off"
+    "editor.wordWrap": "off",
+    "editor.autoClosingQuotes": "never",
+    "editor.autoClosingBrackets": "never"
 }
