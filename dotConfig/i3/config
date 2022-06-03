@@ -189,13 +189,14 @@ bindsym Mod4+t exec setxkbmap -layout us -variant altgr-intl
 bindsym Mod4+k exec setxkbmap -layout us -variant real-prog-dvorak
 
 # Set audio sinks 
-exec --no-starup-id pactl move-sink-input 1 alsa_output.usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-00.analog-stereo
-exec --no-startup-id pactl move-sink-input 0 alsa_output.pci-0000_07_00.1.hdmi-stereo
-bindsym Mod4+bracketleft exec --no-startup-id pactl set-default-sink 0
-bindsym Mod4+bracketright exec --no-startup-id pactl set-default-sink 1
+#exec --no-starup-id pactl move-sink-input 1 alsa_output.usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-00.analog-stereo
+#exec --no-startup-id pactl move-sink-input 0 alsa_output.pci-0000_07_00.1.hdmi-stereo
+#bindsym Mod4+bracketleft exec --no-startup-id pactl set-default-sink 0
+#bindsym Mod4+bracketright exec --no-startup-id pactl set-default-sink 1
+bindsym Mod4+F9 exec ~/.config/i3/toggle_sink.sh
 
 # Volume controls for both 
-bindsym Mod4+minus exec --no-startup-id pactl set-sink-volume 0 -5%; exec --no-startup-id pactl set-sink-volume 1 -5% #decrease sound volume
-bindsym Mod4+plus exec  --no-startup-id pactl set-sink-volume 0 +5%; exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume 
+bindsym Mod4+minus exec --no-startup-id pactl set-sink-volume 0 -5%; exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
+bindsym Mod4+plus exec  --no-startup-id pactl set-sink-volume 0 +5%; exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume 
 
 
