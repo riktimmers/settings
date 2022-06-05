@@ -27,6 +27,9 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 
+" Set <C+w>f to split vertical instead of horizontal
+nnoremap <c-w>f :vertical wincmd f<cr>
+
 " CoC settings
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
