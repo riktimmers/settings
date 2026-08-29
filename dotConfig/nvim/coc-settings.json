@@ -1,10 +1,16 @@
 {
-  //clangd.path": "~/.config/coc/extensions/coc-clangd-data/install/14.0.3/clangd_14.0.3/bin/clangd"
-"languageserver": {
-  "clangd": {
-    "command": "clangd",
-    "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
-    "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
-  }
-}
+  "snippets.ultisnips.pythonPrompt": false,
+  "coc.preferences.formatOnSave": true,
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": false,
+  "inlayHint.enable": false,
+  "clangd.path": "/home/rik/program/clangd_22.1.6/bin/clangd",
+  "clangd.arguments": [
+    "--header-insertion=never",
+    "--completion-style=detailed",
+    "--all-scopes-completion",
+    "--background-index"
+  ],
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "~/.local/bin/black"
 }

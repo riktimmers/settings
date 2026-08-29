@@ -49,8 +49,7 @@ font pango:monospace 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
-
+bindsym $mod+Return exec ~/.local/kitty.app/bin/kitty -e tmux
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -172,21 +171,51 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
         status_command i3status
+        font pango:DejaVu Sans Mono 10
 }
 
 ## Setup Monitors position
 # Work Setup
 #exec xrandr --output DP-3 --auto --pos 0x0 --output DP-5 --auto --pos 1920x0 --output HDMI-0 --auto --pos 3840x0
 
+exec --no-startup-id i3-msg 'exec systemctl --user start pulseaudio.socket'
+
 exec --no-startup-id i3-msg 'exec firefox'
-exec --no-startup-id i3-msg 'workspace 2; exec terminator'
+#exec --no-startup-id i3-msg 'workspace 5; exec jellyfinmediaplayer'
+exec --no-startup-id i3-msg 'workspace 4; exec qbittorrent'
+exec --no-startup-id i3-msg 'workspace 2; exec ~/.local/kitty.app/bin/kitty -e tmux'
+
+
+exec --no-startup-id i3-msg 'exec xset -dpms s off'
+
 bindsym Control+Mod1+l exec "i3lock -e --color 000000"
 
-assign [class="firefox"] 1
+assign [class="Firefox"] 1
+assign [class="qBittorrent"] 4
+#assign [class="jellyfinmediaplayer"] 5
+
+
+for_window [class="^.*"] border pixel 0
+#for_window [class="Terminator"] fullscreen enable
+for_window [all] fullscreen enable
+
+for_window [class="MotionControlUI"] fullscreen disable 
+for_window [class="MotionControlUI"] floating enable 
+
+for_window [class="raylib"] fullscreen disable 
+for_window [class="raylib"] floating disable 
+
 
 ## Set Keyboard layout, key switch stays at the same position 
 bindsym Mod4+t exec setxkbmap -layout us -variant altgr-intl 
 bindsym Mod4+k exec setxkbmap -layout us -variant real-prog-dvorak
+
+exec --no-startup-id i3-msg exec setxkbmap -layout us -variant real-prog-dvorak
+#exec --no-startup-id i3-msg 'xset r rate 400 10'
+
+
+
+
 
 # Set audio sinks 
 #exec --no-starup-id pactl move-sink-input 1 alsa_output.usb-Kingston_HyperX_Virtual_Surround_Sound_00000000-00.analog-stereo
@@ -196,7 +225,13 @@ bindsym Mod4+k exec setxkbmap -layout us -variant real-prog-dvorak
 bindsym Mod4+F9 exec ~/.config/i3/toggle_sink.sh
 
 # Volume controls for both 
-bindsym Mod4+minus exec --no-startup-id pactl set-sink-volume 0 -5%; exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
-bindsym Mod4+plus exec  --no-startup-id pactl set-sink-volume 0 +5%; exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume 
+#bindsym Mod4+exclam exec --no-startup-id pactl set-sink-volume 0 -5%; exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
 
+bindsym Mod4+0x21 exec --no-startup-id pactl set-sink-volume 0 -5%; exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% #decrease sound volume
+bindsym Mod4+0x7c exec  --no-startup-id pactl set-sink-volume 0 +5%; exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% #increase sound volume 
 
+bindsym Print exec gnome-screenshot -i 
+
+# Testing with GLFW 
+for_window [title="GLFW_render"] floating enable
+for_window [title="Vulkan Engine"] floating enable
